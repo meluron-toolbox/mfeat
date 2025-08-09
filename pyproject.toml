@@ -1,0 +1,19 @@
+[project]
+name = "mfeat"
+version = "0.1.0"
+description = "Music Features Extractor"
+authors = [
+    {name = "Ankit Anand", email = "ankit0.anand0@gmail.com"},
+]
+dependencies = ["modusa>=0.3.21", "pyloudnorm>=0.1.1", "ipykernel>=6.30.1", "jupyter>=1.1.1", "pandas>=2.3.1"]
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
