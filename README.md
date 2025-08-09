@@ -1,1 +1,2 @@
 # mfeat
+Musical Features Extractor.
