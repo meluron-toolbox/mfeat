@@ -9,6 +9,7 @@
 
 import streamlit as st
 import modusa as ms
+import os
 import tempfile
 
 import sys
@@ -39,7 +40,7 @@ uploaded_audio = st.file_uploader(
 
 # Load the audio content from st uploaded file object
 if uploaded_audio is not None:
-	with tempfile.NamedTemporaryFile(delete=True, suffix=".wav") as tmp:
+	with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as tmp:
 		# Load the audio at 48000
 		tmp.write(uploaded_audio.read())
 		tmp_path = tmp.name
@@ -102,3 +103,5 @@ if uploaded_audio is not None:
 			legend="Rhythmicity"
 		)
 		st.pyplot(fig)
+	
+	os.remove(tmp_path)
